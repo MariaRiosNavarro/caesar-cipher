@@ -35,7 +35,7 @@ const plaintext = [
   "z",
 ];
 
-console.log(plaintext.length); //26 -> last Index 25
+// console.log(plaintext.length); //26 -> last Index 25
 
 const decoder = () => {
   // 2.Save values
@@ -97,21 +97,24 @@ const decoder = () => {
   output.innerHTML = output.innerHTML = `<p class="red">${newTextString}<p>`;
 };
 
-// --- NOTE:
+// --- NOTE: decoder and encoder functions are the same
+// --- with the exception that in encoder we remove the key
+// --- Compare 6.2+6.3 with 6.2B+6.3B
+// --- TODO: Upper and Lowercase handling and refactor to one function
 
 const encoder = () => {
   // remove old values
 
   output.innerHTML = " ";
 
-  // 2.Save values
+  // 2B.Save values
 
   let text = textInput.value;
   let key = Number(keyInput.value);
 
   //   console.log("text and key", text, key);
 
-  // 3. Error handling, error message if the user dont use plaintext characters or space (" ")
+  // 3B. Error handling, error message if the user dont use plaintext characters or space (" ")
 
   const regex = /^[a-zA-Z ]*$/; //a to z & A to Z + space " ";
 
@@ -120,30 +123,30 @@ const encoder = () => {
     return;
   }
 
-  //4. We create a Array from Text
+  //4B. We create a Array from Text
 
   let newText = Array.from(text);
 
-  // 5. Create help variables:
+  //5B. Create help variables:
 
   let indexAlpha, endIndex, newLetter;
 
-  //   6. Create empty decode Array for output  plaintext -> newletterArray
+  //6B. Create empty decode Array for output  plaintext -> newletterArray
 
   let newLetterArray = [];
 
   newLetterArray = newText.map((letter) => {
-    // 6.1-find index of letter in main Array
+    // 6.1B-find index of letter in main Array
     indexAlpha = plaintext.indexOf(letter);
-    // 6.2-THIS TIME the index must to REMOVE the value of the Key
+    // 6.2B-THIS TIME the index must to REMOVE the value of the Key
     endIndex = indexAlpha - key;
-    // 6.3- If the endIndex is smaller as 0, we cann not use this index as endIndex, we add the length of the array to habe the last number
+    // 6.3B- If the endIndex is smaller as 0, we cann not use this index as endIndex, we add the length of the array to habe the last number
     if (endIndex < 0) {
       console.log("indexAlpha, endIndex", indexAlpha, endIndex);
       let newValue = endIndex + plaintext.length;
       endIndex = newValue;
     }
-    //6.4-Wen we use a space, we dont find it in plaintext, and we need the space later also newLetter = " ";
+    //6.4B-Wen we use a space, we dont find it in plaintext, and we need the space later also newLetter = " ";
     if (indexAlpha === -1) {
       newLetter = " ";
     } else {
@@ -154,13 +157,13 @@ const encoder = () => {
 
   //   console.log("newLetterArray", newLetterArray);
 
-  // 7. We reduce our array as new string
+  // 7B. We reduce our array as new string
 
   let newTextString = newLetterArray.reduce((a, b) => a + b);
 
   console.log(newTextString);
   console.log(typeof newTextString);
-  // 8. Decoder Output
+  // 8B. encode Output
   output.innerHTML = `<p class="green">${newTextString}<p>`;
 };
 
