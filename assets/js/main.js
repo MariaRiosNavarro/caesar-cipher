@@ -100,7 +100,6 @@ const decoder = () => {
 // --- NOTE: decoder and encoder functions are the same
 // --- with the exception that in encoder we remove the key
 // --- Compare 6.2+6.3 with 6.2B+6.3B
-// --- TODO: Upper and Lowercase handling and refactor to one function
 
 const encoder = () => {
   // remove old values
@@ -109,7 +108,7 @@ const encoder = () => {
 
   // 2B.Save values
 
-  let text = textInput.value;
+  let text = textInput.value.toLowerCase();
   let key = Number(keyInput.value);
 
   //   console.log("text and key", text, key);
@@ -125,29 +124,29 @@ const encoder = () => {
 
   //4B. We create a Array from Text
 
-  let newText = Array.from(text);
+  let initialTextArray = Array.from(text);
 
   //5B. Create help variables:
 
-  let indexAlpha, endIndex, newLetter;
+  let initialIndex, endIndex, newLetter;
 
   //6B. Create empty encode Array for output  encode -> newletterArray(in plain text)
 
   let newLetterArray = [];
 
-  newLetterArray = newText.map((letter) => {
+  newLetterArray = initialTextArray.map((letter) => {
     // 6.1B-find index of letter in main Array
-    indexAlpha = plaintext.indexOf(letter);
+    initialIndex = plaintext.indexOf(letter);
     // 6.2B-THIS TIME the index must to REMOVE the value of the Key
-    endIndex = indexAlpha - key;
+    endIndex = initialIndex - key;
     // 6.3B- If the endIndex is smaller as 0, we cann not use this index as endIndex, we add the length of the array to habe the last number
     if (endIndex < 0) {
-      console.log("indexAlpha, endIndex", indexAlpha, endIndex);
+      console.log("indexAlpha, endIndex", initialIndex, endIndex);
       let newValue = endIndex + plaintext.length;
       endIndex = newValue;
     }
     //6.4B-Wen we use a space, we dont find it in plaintext, and we need the space later also newLetter = " ";
-    if (indexAlpha === -1) {
+    if (initialIndex === -1) {
       newLetter = " ";
     } else {
       newLetter = plaintext[endIndex];
