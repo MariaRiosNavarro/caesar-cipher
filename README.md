@@ -13,3 +13,5 @@ Ciphertext alphabet: D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
 The word "test" is "whvw"
 
 So with this key, the word "wikipedia" would be encrypted as "ZLNLSHGLD".
+
+The word "abcde fghij klmno pqrst uvwxy z" is "defgh ijklm nopqr stuvw xyzab c"
