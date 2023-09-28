@@ -1,6 +1,6 @@
 # caesar-cipher
 
-# [Deployment](https://mariariosnavarro.github.io/caesar-cipher/)
+# [GitHub Pages Deployment](https://mariariosnavarro.github.io/caesar-cipher/)
 
 Caesar encryption is a simple symmetric encryption method based on monographic and monoalphabetic substitution.
 
