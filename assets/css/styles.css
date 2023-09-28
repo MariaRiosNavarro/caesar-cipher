@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* h1:hover {
+  content: "Ywaown Yeldan";
+} */
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 5rem auto;
+  width: 75vw;
+  height: auto;
+  background-color: lightgray;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+input {
+  border-radius: 5px;
+  border: none;
+  border: 1px solid lightgray;
+  padding: 0.5rem;
+  display: block;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+input[type="submit"] {
+  padding: 0.5rem 1rem;
+  display: inline;
+  width: 50%;
+}
+
+input[type="submit"]:first-of-type {
+  background-color: lightcoral;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:first-of-type:hover {
+  background-color: rgb(219, 55, 55);
+  color: beige;
+  cursor: pointer;
+}
+
+input[type="submit"]:last-of-type {
+  background-color: lightgreen;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:last-of-type:hover {
+  background-color: green;
+  color: beige;
+  cursor: pointer;
+}
+
+.output {
+  height: 5rem;
+}
