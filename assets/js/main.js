@@ -131,7 +131,7 @@ const encoder = () => {
 
   let indexAlpha, endIndex, newLetter;
 
-  //6B. Create empty decode Array for output  plaintext -> newletterArray
+  //6B. Create empty encode Array for output  encode -> newletterArray(in plain text)
 
   let newLetterArray = [];
 
