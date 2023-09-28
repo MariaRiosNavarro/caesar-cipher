@@ -4,7 +4,7 @@ const textInput = document.querySelector('[data-js="text"]');
 const keyInput = document.querySelector('[data-js="key"]');
 const output = document.querySelector('[data-js="output"]');
 
-// 2. Save Alphabet
+// 1.a Save Alphabet
 
 const plaintext = [
   "a",
@@ -38,12 +38,21 @@ const plaintext = [
 console.log(plaintext.length); //26 -> last Index 25
 
 const decoder = () => {
-  // 3.Save values
+  // 2.Save values
 
   let text = textInput.value;
   let key = Number(keyInput.value);
 
   console.log("text and key", text, key);
+
+  // 3. Error handling, error message if the user dont use plaintext characters or space (" ")
+
+  const regex = /^[a-zA-Z ]*$/; //a to z & A to Z + space " ";
+
+  if (!regex.test(text)) {
+    output.innerHTML = `<p class ="alert"> Please use only letters (lowercase or uppercase) and spaces </p>`;
+    return;
+  }
 
   //4. We create a Array from Text
 
