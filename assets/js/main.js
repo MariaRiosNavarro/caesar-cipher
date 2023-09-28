@@ -12,27 +12,27 @@ const plaintext = [
   "c",
   "d",
   "e",
-  //   "f",
-  //   "g",
-  //   "h",
-  //   "i",
-  //   "j",
-  //   "k",
-  //   "l",
-  //   "m",
-  //   "n",
-  //   "o",
-  //   "p",
-  //   "q",
-  //   "r",
-  //   "s",
-  //   "t",
-  //   "u",
-  //   "v",
-  //   "w",
-  //   "x",
-  //   "y",
-  //   "z",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
 ];
 
 console.log(plaintext.length); //26 -> last Index 25
@@ -44,9 +44,8 @@ const decoder = () => {
 
   let text = textInput.value;
   let key = Number(keyInput.value);
-  let index = "";
 
-  console.log(text, key);
+  console.log("text and key", text, key);
 
   //   4. Save a new array Index Array
 
@@ -78,9 +77,51 @@ const decoder = () => {
 
   console.log("withKey", indexArrayWithKey);
 
-  //   6. Use the new index to make a new output array
+  //   6. Use the new index to translate
 
   let newLetterArray = [];
+
+  let newText = Array.from(text);
+
+  console.log(newText);
+
+  let indexAlpha, endIndex, newLetter;
+
+  //   newLetterArray = newText.forEach((letter) => {
+  //     indexAlpha = plaintext.indexOf(letter);
+  //     endIndex = indexAlpha + key;
+  //     newLetter = plaintext[endIndex];
+
+  //     console.log(
+  //       `${letter} indexAlpha, endIndex, newLetter`,
+  //       indexAlpha,
+  //       endIndex,
+  //       newLetter
+  //     );
+  //     return indexAlpha, endIndex, newLetter;
+  //   });
+
+  newLetterArray = newText.map((letter) => {
+    indexAlpha = plaintext.indexOf(letter);
+    endIndex = indexAlpha + key;
+    newLetter = plaintext[endIndex];
+
+    console.log(
+      `${letter} indexAlpha, endIndex, newLetter`,
+      indexAlpha,
+      endIndex,
+      newLetter
+    );
+    return newLetter;
+  });
+
+  console.log("newLetterArray", newLetterArray);
+
+  let newTextString = newLetterArray.reduce((a, b) => a + b);
+
+  console.log(newTextString);
+
+  output.innerHTML = newTextString;
 
   // Array.from()
 };
