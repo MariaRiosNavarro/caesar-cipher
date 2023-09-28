@@ -56,28 +56,28 @@ const decoder = () => {
 
   //4. We create a Array from Text
 
-  let newText = Array.from(text);
+  let initialTextArray = Array.from(text);
 
   // 5. Create help variables:
 
-  let indexAlpha, endIndex, newLetter;
+  let initialIndex, endIndex, newLetter;
 
   //   6. Create empty decode Array for output  plaintext -> newletterArray
 
   let newLetterArray = [];
 
-  newLetterArray = newText.map((letter) => {
+  newLetterArray = initialTextArray.map((letter) => {
     // 6.1-find index of letter in main Array
-    indexAlpha = plaintext.indexOf(letter);
+    initialIndex = plaintext.indexOf(letter);
     // 6.2-All the index must to add a value of the Key
-    endIndex = indexAlpha + key;
+    endIndex = initialIndex + key;
     // 6.3-if the endIndex (index 25) is bigger as the plaintext.length, we cann not use this index as endIndex
     if (endIndex >= plaintext.length) {
       let newValue = endIndex - plaintext.length;
       endIndex = newValue;
     }
     //6.4-Wen we use a space, we dont find it in plaintext, and we need the space later also newLetter = " ";
-    if (indexAlpha === -1) {
+    if (initialIndex === -1) {
       newLetter = " ";
     } else {
       newLetter = plaintext[endIndex];
