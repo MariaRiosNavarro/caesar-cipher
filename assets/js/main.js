@@ -40,7 +40,7 @@ const plaintext = [
 const decoder = () => {
   // 2.Save values
 
-  let text = textInput.value;
+  let text = textInput.value.toLowerCase();
   let key = Number(keyInput.value);
 
   //   console.log("text and key", text, key);
