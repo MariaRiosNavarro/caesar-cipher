@@ -1,5 +1,7 @@
 # caesar-cipher
 
+# [Deployment]()
+
 Caesar encryption is a simple symmetric encryption method based on monographic and monoalphabetic substitution. During encryption, each letter of the plaintext is mapped to a ciphertext letter. This mapping is obtained by cyclically shifting (rotating) the characters of an ordered alphabet to the right by a certain number; cyclically means that when shifting beyond Z, one continues counting again starting at A. The number of characters shifted forms the ciphertext letter. The number of characters shifted forms the key, which remains unchanged for the entire encryption.
 
 Here is an example of a shift of three characters:
@@ -15,3 +17,9 @@ The word "test" is "whvw"
 So with this key, the word "wikipedia" would be encrypted as "ZLNLSHGLD".
 
 The word "abcde fghij klmno pqrst uvwxy z" is "defgh ijklm nopqr stuvw xyzab c"
+
+  <div>
+    <img src="./assets/img/readme1.png" alt="readme pic" width="250px">
+    <img src="./assets/img/readme2.png" alt="readme pic" width="250px">
+    <img src="./assets/img/readme3.png" alt="readme pic" width="250px">
+  </div>

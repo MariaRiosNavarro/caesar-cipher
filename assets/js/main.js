@@ -94,12 +94,16 @@ const decoder = () => {
   console.log(newTextString);
   console.log(typeof newTextString);
   // 8. Decoder Output
-  output.innerHTML = newTextString;
+  output.innerHTML = output.innerHTML = `<p class="red">${newTextString}<p>`;
 };
 
 // --- NOTE:
 
 const encoder = () => {
+  // remove old values
+
+  output.innerHTML = " ";
+
   // 2.Save values
 
   let text = textInput.value;
@@ -157,5 +161,10 @@ const encoder = () => {
   console.log(newTextString);
   console.log(typeof newTextString);
   // 8. Decoder Output
-  output.innerHTML = newTextString;
+  output.innerHTML = `<p class="green">${newTextString}<p>`;
 };
+
+//remove alert if click inside the Text input
+textInput.addEventListener("click", () => {
+  output.innerHTML = "";
+});

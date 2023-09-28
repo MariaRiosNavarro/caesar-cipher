@@ -22,10 +22,11 @@ main {
   gap: 2rem;
   margin: 5rem auto;
   width: 75vw;
-  height: auto;
+  height: 100%;
   background-color: lightgray;
   padding: 2rem;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 input {
@@ -35,6 +36,7 @@ input {
   padding: 0.5rem;
   display: block;
   width: 100%;
+  font-size: 1.5rem;
 }
 
 input[type="number"] {
@@ -78,5 +80,32 @@ input[type="submit"]:last-of-type:hover {
 }
 
 .output {
-  height: 5rem;
+  min-height: 10rem;
+  height: auto;
+}
+
+.alert {
+  background-color: red;
+  letter-spacing: 0.5rem;
+  color: beige;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+p {
+  font-size: 2rem;
+  font-weight: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.green {
+  background-color: lightgreen;
+}
+
+.red {
+  background-color: lightcoral;
 }
