@@ -57,25 +57,25 @@ const decoder = () => {
 
   //   5. Add the index + value a new array Index, with the limit of 25n (lastIndexArray)
 
-  let newIndex = 0;
+  //   let newIndex = 0;
 
-  let indexArrayWithKey = [];
+  //   let indexArrayWithKey = [];
 
-  indexArrayWithKey = indexArray.map((index) => {
-    // All the index must to add a value
-    for (let i = 0; i < lastIndexOfArray; i++) {
-      let numberIndex = Number(index);
-      newIndex = numberIndex + key;
-      //   if we are at the end of the array (index 25), we need to count at 0, therefore - lastIndexArray
-      if (newIndex >= lastIndexOfArray) {
-        let newValue = numberIndex + key - lastIndexOfArray;
-        newIndex = newValue;
-      }
-      return newIndex;
-    }
-  });
+  //   indexArrayWithKey = indexArray.map((index) => {
+  //     // All the index must to add a value
+  //     for (let i = 0; i < lastIndexOfArray; i++) {
+  //       let numberIndex = Number(index);
+  //       newIndex = numberIndex + key;
+  //       //   if we are at the end of the array (index 25), we need to count at 0, therefore - lastIndexArray
+  //       if (newIndex >= lastIndexOfArray) {
+  //         let newValue = numberIndex + key - lastIndexOfArray;
+  //         newIndex = newValue;
+  //       }
+  //       return newIndex;
+  //     }
+  //   });
 
-  console.log("withKey", indexArrayWithKey);
+  //   console.log("withKey", indexArrayWithKey);
 
   //   6. Use the new index to translate
 
@@ -83,35 +83,27 @@ const decoder = () => {
 
   let newText = Array.from(text);
 
-  console.log(newText);
+  console.log("here", newText);
 
   let indexAlpha, endIndex, newLetter;
 
-  //   newLetterArray = newText.forEach((letter) => {
-  //     indexAlpha = plaintext.indexOf(letter);
-  //     endIndex = indexAlpha + key;
-  //     newLetter = plaintext[endIndex];
-
-  //     console.log(
-  //       `${letter} indexAlpha, endIndex, newLetter`,
-  //       indexAlpha,
-  //       endIndex,
-  //       newLetter
-  //     );
-  //     return indexAlpha, endIndex, newLetter;
-  //   });
-
   newLetterArray = newText.map((letter) => {
+    // find index
     indexAlpha = plaintext.indexOf(letter);
+    console.log(indexAlpha);
+    // All the index must to add a value
     endIndex = indexAlpha + key;
-    newLetter = plaintext[endIndex];
-
-    console.log(
-      `${letter} indexAlpha, endIndex, newLetter`,
-      indexAlpha,
-      endIndex,
-      newLetter
-    );
+    // if the endIndex (index 25) is bigger as the lastIndexOfArray:  therefore - lastIndexArray
+    if (endIndex >= plaintext.length) {
+      let newValue = endIndex - plaintext.length;
+      endIndex = newValue;
+    }
+    //wen we use a space we dont find it in plaintext, and we need the space later also newLetter = " ";
+    if (indexAlpha === -1) {
+      newLetter = " ";
+    } else {
+      newLetter = plaintext[endIndex];
+    }
     return newLetter;
   });
 
@@ -122,19 +114,6 @@ const decoder = () => {
   console.log(newTextString);
 
   output.innerHTML = newTextString;
-
-  // Array.from()
 };
 
 // ---
-
-// test
-
-// const encoder = () => {
-//   // 3.Save values
-
-//   let text = textInput.value;
-//   let key = keyInput.value;
-
-//   console.log(text, key);
-// };
