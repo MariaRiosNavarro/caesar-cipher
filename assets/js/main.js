@@ -80,7 +80,7 @@ const decoder = () => {
 
   //   6. Use the new index to make a new output array
 
-  let;
+  let newLetterArray = [];
 
   // Array.from()
 };
