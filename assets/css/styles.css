@@ -37,6 +37,13 @@ input {
   width: 100%;
 }
 
+input[type="number"] {
+  display: inline;
+  width: max-content;
+  min-width: 5rem;
+  text-align: center;
+}
+
 .wrapper {
   display: flex;
   gap: 2rem;
