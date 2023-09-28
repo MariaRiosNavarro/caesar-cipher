@@ -100,7 +100,6 @@ const decoder = () => {
 // --- NOTE: decoder and encoder functions are the same
 // --- with the exception that in encoder we remove the key
 // --- Compare 6.2+6.3 with 6.2B+6.3B
-// --- TODO: Upper and Lowercase handling and refactor to one function
 
 const encoder = () => {
   // remove old values
@@ -109,7 +108,7 @@ const encoder = () => {
 
   // 2B.Save values
 
-  let text = textInput.value;
+  let text = textInput.value.toLowerCase();
   let key = Number(keyInput.value);
 
   //   console.log("text and key", text, key);
