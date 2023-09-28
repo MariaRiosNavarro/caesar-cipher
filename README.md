@@ -1,6 +1,6 @@
 # caesar-cipher
 
-# [Deployment]()
+# [Deployment](https://mariariosnavarro.github.io/caesar-cipher/)
 
 Caesar encryption is a simple symmetric encryption method based on monographic and monoalphabetic substitution.
 
@@ -10,7 +10,7 @@ Key: 3
 
 Plaintext alphabet: a b c d e f g h i j k l m n o p q r s t u v w x y z
 
-Ciphertext alphabet: D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+Ciphertext alphabet: d e f g h i j k l m n o p q r s t u v w x y z a b c
 
 The word "test" with key 3 is "whvw"
 
