@@ -37,7 +37,7 @@ const plaintext = [
 
 console.log(plaintext.length); //26 -> last Index 25
 
-const lastIndexArray = plaintext.length - 1; //25
+const lastIndexOfArray = plaintext.length - 1; //25
 
 const decoder = () => {
   // 3.Save values
@@ -63,12 +63,13 @@ const decoder = () => {
   let indexArrayWithKey = [];
 
   indexArrayWithKey = indexArray.map((index) => {
-    for (let i = 0; i < lastIndexArray; i++) {
+    // All the index must to add a value
+    for (let i = 0; i < lastIndexOfArray; i++) {
       let numberIndex = Number(index);
       newIndex = numberIndex + key;
-      //   if we are at the end of the array (25), we need to count at 0
-      if (newIndex >= lastIndexArray) {
-        let newValue = numberIndex + key - lastIndexArray;
+      //   if we are at the end of the array (index 25), we need to count at 0, therefore - lastIndexArray
+      if (newIndex >= lastIndexOfArray) {
+        let newValue = numberIndex + key - lastIndexOfArray;
         newIndex = newValue;
       }
       return newIndex;
@@ -78,6 +79,8 @@ const decoder = () => {
   console.log("withKey", indexArrayWithKey);
 
   //   6. Use the new index to make a new output array
+
+  let;
 
   // Array.from()
 };
