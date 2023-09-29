@@ -4,26 +4,32 @@ const textInput = document.querySelector('[data-js="text"]');
 const keyInput = document.querySelector('[data-js="key"]');
 const output = document.querySelector('[data-js="output"]');
 
-// 1.a Save Alphabet
+// 1.a Save array with the acepted characters
 
 const plaintext = [
+  "7",
   "a",
   "b",
+  "2",
   "c",
   "d",
   "e",
+  "9",
   "f",
+  "1",
   "g",
   "h",
   "i",
   "j",
   "k",
   "l",
+  "3",
   "m",
   "n",
   "o",
   "p",
   "q",
+  "5",
   "r",
   "s",
   "t",
@@ -32,7 +38,26 @@ const plaintext = [
   "w",
   "x",
   "y",
+  "6",
   "z",
+  " ",
+  "?",
+  "!",
+  "#",
+  "*",
+  "8",
+  "'",
+  "&",
+  "%",
+  "=",
+  ":",
+  "0",
+  ";",
+  ".",
+  ",",
+  "-",
+  "_",
+  "4",
 ];
 
 // console.log(plaintext.length); //26 -> last Index 25
