@@ -112,9 +112,10 @@ const encoder = () => {
 
   //4B. We create a Array from Text
   let initialTextArray = Array.from(text);
-  // 5B. Create help variables:
 
+  // 5B. Create help variables:
   let index, newLetter;
+
   //   6B. Create empty encode Array for output secretAlphabet(index)=plaintext(index)-> newletterArray
   let newLetterArray = [];
   newLetterArray = initialTextArray.map((letter) => {
