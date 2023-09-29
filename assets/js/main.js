@@ -80,6 +80,7 @@ const decoder = () => {
     if (initialIndex === -1) {
       newLetter = " ";
     } else {
+      //! 6.5 !HERE translate the word with the NEW index
       newLetter = plaintext[endIndex];
     }
     return newLetter;
@@ -149,6 +150,7 @@ const encoder = () => {
     if (initialIndex === -1) {
       newLetter = " ";
     } else {
+      //! 6.5B ! HERE translate the word with the NEW index
       newLetter = plaintext[endIndex];
     }
     return newLetter;
