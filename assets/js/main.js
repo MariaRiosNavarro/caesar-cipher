@@ -60,8 +60,6 @@ const plaintext = [
   "4",
 ];
 
-// console.log(plaintext.length); //26 -> last Index 25
-
 const decoder = () => {
   // 2.Save values
 
