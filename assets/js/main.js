@@ -92,8 +92,8 @@ const decoder = () => {
 
   let newTextString = newLetterArray.reduce((a, b) => a + b);
 
-  console.log(newTextString);
-  console.log(typeof newTextString);
+  // console.log(newTextString);
+  // console.log(typeof newTextString);
   // 8. Decoder Output
   output.innerHTML = output.innerHTML = `<p class="red">${newTextString}<p>`;
 };
@@ -162,8 +162,8 @@ const encoder = () => {
 
   let newTextString = newLetterArray.reduce((a, b) => a + b);
 
-  console.log(newTextString);
-  console.log(typeof newTextString);
+  // console.log(newTextString);
+  // console.log(typeof newTextString);
   // 8B. encode Output
   output.innerHTML = `<p class="green">${newTextString}<p>`;
 };
