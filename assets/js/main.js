@@ -61,6 +61,9 @@ const plaintext = [
 ];
 
 const decoder = () => {
+  // remove old values
+  output.innerHTML = " ";
+
   // 2.Save values
 
   let text = textInput.value.toLowerCase();
