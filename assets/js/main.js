@@ -65,27 +65,22 @@ const decoder = () => {
   output.innerHTML = " ";
 
   // 2.Save values
-
   let text = textInput.value.toLowerCase();
   let key = Number(keyInput.value);
 
   // 3. Add new decode Array (we cut the original with the key and add the end before)
-
   let secretAlphabet = [];
   secretAlphabet = plaintext.slice(key).concat(plaintext.slice(0, key));
 
   //4. We create a Array from Text
-
   let initialTextArray = Array.from(text);
 
   // 5. Create help variables:
-
   let index, newLetter;
 
   //   6. Create empty decode Array for output  plaintext(index)=secretAlphabet(index) -> newletterArray
 
   let newLetterArray = [];
-
   newLetterArray = initialTextArray.map((letter) => {
     // 6.1-find index of letter in main Array
     index = plaintext.indexOf(letter);
@@ -95,7 +90,6 @@ const decoder = () => {
   });
 
   // 7. We reduce our array as new string
-
   let newTextString = newLetterArray.reduce((a, b) => a + b);
 
   // 8. Decoder Output
@@ -130,7 +124,7 @@ const encoder = () => {
     newLetter = plaintext[index];
     return newLetter;
   });
-  //   console.log("newLetterArray", newLetterArray);
+
   // 7. We reduce our array as new string
   let newTextString = newLetterArray.reduce((a, b) => a + b);
   // 8. Decoder Output
