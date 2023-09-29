@@ -82,7 +82,7 @@ const decoder = () => {
 
   let index, newLetter;
 
-  //   6. Create empty decode Array for output  plaintext -> newletterArray
+  //   6. Create empty decode Array for output  plaintext(index)=secretAlphabet(index) -> newletterArray
 
   let newLetterArray = [];
 
@@ -103,6 +103,7 @@ const decoder = () => {
 };
 
 // -- decoder/encoder functions are the same with the exception of the point 6.1,6.2 (decode) and 6.1B,6.2B (encode)
+// # Important to translate is the index: secretAlphabet(index)=plaintext(index)
 
 const encoder = () => {
   // remove old values
@@ -120,7 +121,7 @@ const encoder = () => {
   // 5B. Create help variables:
 
   let index, newLetter;
-  //   6B. Create empty decode Array for output  plaintext -> newletterArray
+  //   6B. Create empty encode Array for output secretAlphabet(index)=plaintext(index)-> newletterArray
   let newLetterArray = [];
   newLetterArray = initialTextArray.map((letter) => {
     // 6.1B-find index of letter in Secret Array
