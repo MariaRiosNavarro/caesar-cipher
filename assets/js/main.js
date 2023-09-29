@@ -142,7 +142,6 @@ const encoder = () => {
     endIndex = initialIndex - key;
     // 6.3B- If the endIndex is smaller as 0, we cann not use this index as endIndex, we add the length of the array to habe the last number
     if (endIndex < 0) {
-      console.log("indexAlpha, endIndex", initialIndex, endIndex);
       let newValue = endIndex + plaintext.length;
       endIndex = newValue;
     }
