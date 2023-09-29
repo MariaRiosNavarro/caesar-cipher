@@ -102,6 +102,8 @@ const decoder = () => {
   output.innerHTML = output.innerHTML = `<p class="red">${newTextString}<p>`;
 };
 
+// -- decoder/encoder functions are the same with the exception of the point 6.1,6.2 (decode) and 6.1B,6.2B (encode)
+
 const encoder = () => {
   // remove old values
   output.innerHTML = " ";
@@ -133,6 +135,8 @@ const encoder = () => {
   // 8. Decoder Output
   output.innerHTML = output.innerHTML = `<p class="red">${newTextString}<p>`;
 };
+
+// -----Everywhere
 
 //remove alert if click inside the Text input
 textInput.addEventListener("click", () => {
